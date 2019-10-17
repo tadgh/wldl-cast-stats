@@ -1,3 +1,68 @@
-{% if team_one_statistics %}
-    <p>{{ team_one_statistics }}</p>
-{% endif %}
+<html>
+    <body>
+    <table>
+        <tr>
+            <td></td>
+            <td>{{ team_one_statistics.team.name }}</td>
+            <td>{{ team_two_statistics.team.name }}</td>
+        </tr>
+        <tr>
+            <td>Average Kills</td>
+            <td>{{ team_one_statistics.average_kills}}</td>
+            <td>{{ team_two_statistics.average_kills}}</td>
+        </tr>
+        <tr>
+            <td>Average Deaths</td>
+            <td>{{ team_one_statistics.average_deaths}}</td>
+            <td>{{ team_two_statistics.average_deaths}}</td>
+        </tr>
+        <tr>
+            <td>Average Assists</td>
+            <td>{{ team_one_statistics.average_assists}}</td>
+            <td>{{ team_two_statistics.average_assists}}</td>
+        </tr>
+        <tr>
+            <td>Average KDA</td>
+            <td>{{ team_one_statistics.average_kda}}</td>
+            <td>{{ team_two_statistics.average_kda}}</td>
+        </tr>
+        <tr>
+            <td>matches played</td>
+            <td>{{ team_one_statistics.matches_played}}</td>
+            <td>{{ team_two_statistics.matches_played}}</td>
+        </tr>
+        <tr>
+            <td>matches won</td>
+            <td>{{ team_one_statistics.matches_won}}</td>
+            <td>{{ team_two_statistics.matches_won}}</td>
+        </tr>
+        <tr>
+            <td>series played</td>
+            <td>{{ team_one_statistics.series_played}}</td>
+            <td>{{ team_two_statistics.series_played}}</td>
+        </tr>
+        <tr>
+            <td>series won</td>
+            <td>{{ team_one_statistics.series_won}}</td>
+            <td>{{ team_two_statistics.series_won}}</td>
+        </tr>
+        <tr>
+            <td>Average Creep Score</td>
+            <td>{{ team_one_statistics.average_creep_stats}}</td>
+            <td>{{ team_two_statistics.average_creep_stats}}</td>
+        </tr>
+        <tr>
+            <td>Average XPM</td>
+            <td>{{ team_one_statistics.average_xpm}}</td>
+            <td>{{ team_two_statistics.average_xpm}}</td>
+        </tr>
+        <tr>
+            <td>Average GPM</td>
+            <td>{{ team_one_statistics.average_gpm}}</td>
+            <td>{{ team_two_statistics.average_gpm}}</td>
+        </tr>
+    </table>
+
+    TODO ADD HERO STATS
+    </body>
+</html>
