@@ -76,6 +76,8 @@ def scrape_and_recalculate_league_data():
 
 
 
+
+
 def update_heroes():
     response = requests.get(hero_endpoint)
     if response.status_code == 200:
@@ -87,3 +89,55 @@ def update_heroes():
             hero_entity.common_name = hero_info["displayName"]
             hero_entity.save()
 
+
+def add_avatar_urls():
+    avatars = {}
+    #aspiring divines
+    avatars["7358194"] = "https://i.imgur.com/qrL7QKa.jpg"
+    #average joes
+    avatars["7405334"] = "http://notsportscenter.com/wp-content/uploads/2013/04/averagejoes.jpg"
+    #critmode squad
+    avatars["2448842"] = "https://i.imgur.com/G1OPBb9.png"
+    #DNPWPD
+    avatars["7389684"] = "https://cdn.discordapp.com/attachments/614534838799826949/615606291716636675/Donotpetimplayingdota.PNG"
+    #flavortown
+    avatars["7370154"] = "https://i.kym-cdn.com/photos/images/original/001/034/121/a48.png"
+    #GGS
+    avatars["7359390"] = "https://i.imgur.com/QkMEERU.png"
+    #Lothars Edgelords
+    avatars["7387455"] = "https://crystal-cdn4.crystalcommerce.com/photos/887835/BetrayaloftheGuardian_US_182.jpg"
+    #Mango Tangoes
+    avatars["2469166"] = "https://i.imgur.com/iYVWz6Y.png"
+    #Marcos Angels
+    avatars["7373580"] = "https://i.imgur.com/eOnnnpx.png"
+    #Nice and Successful
+    avatars["6322029"] = "https://i.imgur.com/GuOMtLY.jpg"
+    #Praetotors
+    avatars["7375898"] = "https://us.v-cdn.net/5020300/uploads/FileUpload/74/b817fb1bd061e517e232dcd226941e.jpg"
+    #Sink Catz
+    avatars["7387458"] = "https://i.ibb.co/q95L6k2/SinkCatz.jpg"
+    #SOTA
+    avatars["7341964"] = "https://cdn.discordapp.com/attachments/613048450355036215/613158300124577905/Sons_of_The_Ancient.png"
+    #TeamTempus
+    avatars["5160519"] = "https://i.ibb.co/NFMn18f/Tempus-v6.jpg"
+    #TTEH
+    avatars["7408356"] = "https://cdn.discordapp.com/attachments/609193204264468480/616065428766326785/Tempus_Eh.png"
+    #TMG
+    avatars["7374310"] = "https://i.imgur.com/3s8kIcD.png?1"
+    #3Jm
+    avatars["7327646"] = "https://i.ibb.co/Hq6sVZ2/3JM-Logo.png"
+    #TTU
+    avatars["7341964"] = "https://media.discordapp.net/attachments/477290531173695490/477290761751101450/ttu_esports_logo.png"
+    #WMR
+    avatars["7331032"] = "https://media.discordapp.net/attachments/612692659194036234/612692999645954064/walllon_raduie.jpg"
+
+    for team_id, url in tqdm(avatars.items()):
+        team = Team.objects.get(id=team_id)
+        team.logo_image_url = url
+        team.save()
+
+
+def seed_server():
+    update_heroes()
+    scrape_and_recalculate_league_data()
+    add_avatar_urls()

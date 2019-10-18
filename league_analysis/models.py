@@ -4,6 +4,7 @@ from django.db import models
 class Team(models.Model):
     id = models.CharField(primary_key=True, max_length=50)
     name = models.CharField(max_length=200)
+    logo_image_url = models.CharField(max_length=600, default="https://i.imgur.com/JYuNKXp.jpg")
 
     def __str__(self):
         return self.name
