@@ -19,5 +19,6 @@ from league_analysis import views
 
 urlpatterns = [
     path("live/", views.live_data, name="live"),
-    path("head-to-head/", views.head_to_head, name="head-to-head")
+    path("head-to-head/", views.head_to_head, name="head-to-head"),
+    path("demo/", views.css_demo, name="css-demo")
 ]

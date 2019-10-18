@@ -17,3 +17,6 @@ def head_to_head(request):
         "team_two_statistics": team_two_stats
     }
     return render(request, "leagueanalysis/headtohead.html",context)
+
+def css_demo(request):
+    return render(request, "leagueanalysis/cssexample.html", {})
