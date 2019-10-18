@@ -1,3 +1,25 @@
 li {
     color: green;
 }
+h2 {
+    color: white;
+    font-size: 26px;
+}
+h3 {
+    color: white;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+h4 {
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    text-align: right;
+}
+h5 {
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    text-align: left;
+}

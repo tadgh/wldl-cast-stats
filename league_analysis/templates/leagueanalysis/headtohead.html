@@ -1,68 +1,107 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/league_analysis/style.css' %}">
 <html>
-    <body>
-    <table>
-        <tr>
-            <td></td>
-            <td>{{ team_one_statistics.team.id }}</td>
-            <td>{{ team_two_statistics.team.name }}</td>
-        </tr>
-        <tr>
-            <td>Average Kills</td>
-            <td>{{ team_one_statistics.average_kills}}</td>
-            <td>{{ team_two_statistics.average_kills}}</td>
-        </tr>
-        <tr>
-            <td>Average Deaths</td>
-            <td>{{ team_one_statistics.average_deaths}}</td>
-            <td>{{ team_two_statistics.average_deaths}}</td>
-        </tr>
-        <tr>
-            <td>Average Assists</td>
-            <td>{{ team_one_statistics.average_assists}}</td>
-            <td>{{ team_two_statistics.average_assists}}</td>
-        </tr>
-        <tr>
-            <td>Average KDA</td>
-            <td>{{ team_one_statistics.average_kda}}</td>
-            <td>{{ team_two_statistics.average_kda}}</td>
-        </tr>
-        <tr>
-            <td>matches played</td>
-            <td>{{ team_one_statistics.matches_played}}</td>
-            <td>{{ team_two_statistics.matches_played}}</td>
-        </tr>
-        <tr>
-            <td>matches won</td>
-            <td>{{ team_one_statistics.matches_won}}</td>
-            <td>{{ team_two_statistics.matches_won}}</td>
-        </tr>
-        <tr>
-            <td>series played</td>
-            <td>{{ team_one_statistics.series_played}}</td>
-            <td>{{ team_two_statistics.series_played}}</td>
-        </tr>
-        <tr>
-            <td>series won</td>
-            <td>{{ team_one_statistics.series_won}}</td>
-            <td>{{ team_two_statistics.series_won}}</td>
-        </tr>
-        <tr>
-            <td>Average Creep Score</td>
-            <td>{{ team_one_statistics.average_creep_stats}}</td>
-            <td>{{ team_two_statistics.average_creep_stats}}</td>
-        </tr>
-        <tr>
-            <td>Average XPM</td>
-            <td>{{ team_one_statistics.average_xpm}}</td>
-            <td>{{ team_two_statistics.average_xpm}}</td>
-        </tr>
-        <tr>
-            <td>Average GPM</td>
-            <td>{{ team_one_statistics.average_gpm}}</td>
-            <td>{{ team_two_statistics.average_gpm}}</td>
-        </tr>
-    </table>
-
+<head>
+    <style>
+        div.background_img{
+            background: url("https://external-preview.redd.it/OHPkrqAG9vgxPb7HxD8NxaJ8KgFNiAaA8ftYQo0t91U.jpg?width=960&crop=smart&auto=webp&s=2dfdfc1f28b5bfda104147f4a83601565393ff0e");
+            background-repeat: no-repeat;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        div.table_background{
+            background: black;
+            opacity: 0.6;
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        div.stat_table {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background_img" align="center">
+        <div class="table_background">
+            <div class="stat_table"  align="center">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <h2>{{ team_one_statistics.team.name }}</h2>
+                            </th>
+                            <th></th>
+                            <th>
+                                <h2>{{ team_two_statistics.team.name }}</h2>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td><img src="{{ team_one_statistics.team.logo_image_url }}" width="200px"/></td>
+                            <th></th>
+                            <td><img src="{{ team_two_statistics.team.logo_image_url }}" width="200px"/></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_kills}}</h4></td>
+                            <td><h3>Average Kills</h3></td>
+                            <td><h5>{{ team_two_statistics.average_kills}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_deaths}}</h4></td>
+                            <td><h3>Average Deaths</h3></td>
+                            <td><h5>{{ team_two_statistics.average_deaths}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_assists}}</h4></td>
+                            <td><h3>Average Assists</h3></td>
+                            <td><h5>{{ team_two_statistics.average_assists}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_kda}}</h4></td>
+                            <td><h3>Average KDA</h3></td>
+                            <td><h5>{{ team_two_statistics.average_kda}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.matches_played}}</h4></td>
+                            <td><h3>matches played</h3></td>
+                            <td><h5>{{ team_two_statistics.matches_played}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.matches_won}}</h4></td>
+                            <td><h3>matches won</h3></td>
+                            <td><h5>{{ team_two_statistics.matches_won}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.series_played}}</h4></td>
+                            <td><h3>series played</h3></td>
+                            <td><h5>{{ team_two_statistics.series_played}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.series_won}}</h4></td>
+                            <td><h3>series won</h3></td>
+                            <td><h5>{{ team_two_statistics.series_won}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_creep_stats}}</h4></td>
+                            <td><h3>Average Creep Score</h3></td>
+                            <td><h5>{{ team_two_statistics.average_creep_stats}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_xpm}}</h4></td>
+                            <td><h3>Average XPM</h3></td>
+                            <td><h5>{{ team_two_statistics.average_xpm}}</h5></td>
+                        </tr>
+                        <tr>
+                            <td><h4>{{ team_one_statistics.average_gpm}}</h4></td>
+                            <td><h3>Average GPM</h3></td>
+                            <td><h5>{{ team_two_statistics.average_gpm}}</h5></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     TODO ADD HERO STATS
-    </body>
+</body>
 </html>
