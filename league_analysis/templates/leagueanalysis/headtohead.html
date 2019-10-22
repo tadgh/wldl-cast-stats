@@ -36,9 +36,9 @@
                             </th>
                         </tr>
                         <tr>
-                            <td><img src="{{ team_one_statistics.team.logo_image_url }}" width="200px"/></td>
+                            <td style="opacity: 1;"><img src="{{ team_one_statistics.team.logo_image_url }}" width="200px" style="opacity: 1"/></td>
                             <th></th>
-                            <td><img src="{{ team_two_statistics.team.logo_image_url }}" width="200px"/></td>
+                            <td style="opacity: 1;"><img src="{{ team_two_statistics.team.logo_image_url }}" width="200px" style="opacity: 1"/></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,9 +58,9 @@
                             <td><h5>{{ team_two_statistics.average_assists}}</h5></td>
                         </tr>
                         <tr>
-                            <td><h4>{{ team_one_statistics.average_kda}}</h4></td>
+                            <td><h4>{{ team_one_statistics.average_kda|floatformat }}</h4></td>
                             <td><h3>Average KDA</h3></td>
-                            <td><h5>{{ team_two_statistics.average_kda}}</h5></td>
+                            <td><h5>{{ team_two_statistics.average_kda|floatformat}}</h5></td>
                         </tr>
                         <tr>
                             <td><h4>{{ team_one_statistics.matches_played}}</h4></td>
