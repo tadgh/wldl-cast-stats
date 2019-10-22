@@ -16,9 +16,10 @@ Including another URLconf
 from django.urls import path
 
 from league_analysis import views
-
+app_name = "casting"
 urlpatterns = [
     path("live/", views.live_data, name="live"),
     path("head-to-head/", views.head_to_head, name="head-to-head"),
+    path("team-select/", views.select_teams, name="team-select"),
     path("demo/", views.css_demo, name="css-demo")
 ]

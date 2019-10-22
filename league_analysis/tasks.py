@@ -121,7 +121,7 @@ def add_avatar_urls():
     #TeamTempus
     avatars["5160519"] = "https://i.ibb.co/NFMn18f/Tempus-v6.jpg"
     #TTEH
-    avatars["7408356"] = "https://cdn.discordapp.com/attachments/609193204264468480/616065428766326785/Tempus_Eh.png"
+    avatars["7408356"] = "https://i.imgur.com/LS7xH5s.png"
     #TMG
     avatars["7374310"] = "https://i.imgur.com/3s8kIcD.png?1"
     #3Jm
